@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "./animations.css"; /* If you added the animations from earlier */
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    background: #0B0F19;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+/* Images */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Text Selection */
+::selection {
+    background: #6366F1;
+    color: white;
+}
