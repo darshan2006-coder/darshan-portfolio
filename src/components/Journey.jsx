@@ -9,8 +9,9 @@ const journey = [
     location: "SRM Institute of Science and Technology, Ramapuram",
     description: "Launched my academic career focusing on Artificial Intelligence and Machine Learning foundations.",
     icon: <FaGraduationCap />,
-    color: "text-blue-400",
-    glow: "shadow-blue-500/20"
+    textColor: "text-blue-400",
+    hoverBorder: "hover:border-blue-500/40",
+    glow: "shadow-blue-500/10"
   },
   {
     year: "2024",
@@ -18,8 +19,9 @@ const journey = [
     location: "Self-Paced Learning",
     description: "Mastered HTML5, CSS3, and Modern JavaScript. Built 10+ responsive frontend layouts.",
     icon: <FaCode />,
-    color: "text-orange-400",
-    glow: "shadow-orange-500/20"
+    textColor: "text-orange-400",
+    hoverBorder: "hover:border-orange-500/40",
+    glow: "shadow-orange-500/10"
   },
   {
     year: "2025",
@@ -27,8 +29,9 @@ const journey = [
     location: "Core Engineering",
     description: "Developed deep proficiency in Python and SQL. Focused on algorithmic problem solving and database architecture.",
     icon: <FaTerminal />,
-    color: "text-emerald-400",
-    glow: "shadow-emerald-500/20"
+    textColor: "text-emerald-400",
+    hoverBorder: "hover:border-emerald-500/40",
+    glow: "shadow-emerald-500/10"
   },
   {
     year: "2025",
@@ -36,8 +39,9 @@ const journey = [
     location: "Modern Frontend",
     description: "Specialized in component-based architecture using React, Tailwind CSS, and Framer Motion for high-end UX.",
     icon: <FaReact />,
-    color: "text-cyan-400",
-    glow: "shadow-cyan-500/20"
+    textColor: "text-cyan-400",
+    hoverBorder: "hover:border-cyan-500/40",
+    glow: "shadow-cyan-500/10"
   },
   {
     year: "2026",
@@ -45,8 +49,9 @@ const journey = [
     location: "Backend & DevOps",
     description: "Scaled skills into Node.js, FastAPI, and Flask. Implemented secure RESTful APIs with MongoDB and PostgreSQL.",
     icon: <FaServer />,
-    color: "text-violet-400",
-    glow: "shadow-violet-500/20"
+    textColor: "text-violet-400",
+    hoverBorder: "hover:border-violet-500/40",
+    glow: "shadow-violet-500/10"
   },
   {
     year: "Present",
@@ -54,28 +59,29 @@ const journey = [
     location: "Current Milestone",
     description: "Building production-grade AI applications. Fine-tuning models and improving DSA for competitive programming.",
     icon: <FaBrain />,
-    color: "text-fuchsia-400",
-    glow: "shadow-fuchsia-500/20"
+    textColor: "text-fuchsia-400",
+    hoverBorder: "hover:border-fuchsia-500/40",
+    glow: "shadow-fuchsia-500/10"
   },
 ];
 
 function Journey() {
   return (
-    <section id="journey" className="bg-[#0B0F19] text-white py-28 px-10 lg:px-12 relative overflow-hidden">
+    <section id="journey" className="bg-nordic-midnight text-text-primary py-28 px-10 lg:px-12 relative overflow-hidden">
       
       {/* Dynamic Background Elements */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-violet-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-violet-600/5 blur-[120px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-emerald-600/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-      {/* Main Container - Synchronized Layout Grid */}
+      {/* Main Container */}
       <div className="max-w-[1250px] mx-auto w-full relative z-10">
         
-        {/* Left Aligned Heading - Consistent across all views */}
+        {/* Left Aligned Heading */}
         <div className="mb-20 text-left">
-          <p className="text-violet-400 uppercase tracking-[0.3em] text-sm font-semibold">
+          <p className="text-arctic-cyan uppercase tracking-[0.3em] text-sm font-semibold">
             THE TIMELINE
           </p>
-          <h2 className="text-5xl font-bold text-white mt-4 tracking-wide">
+          <h2 className="text-5xl font-bold text-text-primary mt-4 tracking-wide">
             MY JOURNEY
           </h2>
         </div>
@@ -104,30 +110,30 @@ function Journey() {
                 }`}
               >
                 {/* Timeline Dot with Icon */}
-                <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-[#111827] border-2 border-gray-800 z-20 group">
-                  <div className={`text-sm ${item.color} group-hover:scale-125 transition-transform duration-300`}>
+                <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-nordic-midnight border-2 border-dark-steel z-20 group">
+                  <div className={`text-sm ${item.textColor} group-hover:scale-125 transition-transform duration-300`}>
                     {item.icon}
                   </div>
                 </div>
 
                 {/* Content Card */}
-                <div className={`w-[calc(100%-3rem)] md:w-[45%] ml-12 md:ml-0`}>
-                  <div className={`bg-[#111827]/60 backdrop-blur-md border border-gray-800 p-6 rounded-3xl hover:border-violet-500/30 transition-all duration-300 group shadow-lg ${item.glow}`}>
+                <div className="w-[calc(100%-3rem)] md:w-[45%] ml-12 md:ml-0">
+                  <div className={`bg-nordic-slate/60 backdrop-blur-md border border-dark-steel/60 p-6 rounded-3xl transition-all duration-300 group shadow-lg ${item.hoverBorder} ${item.glow}`}>
                     
                     <div className="flex items-center justify-between mb-2">
-                      <span className={`text-xs font-bold tracking-widest uppercase ${item.color}`}>
+                      <span className={`text-xs font-mono font-bold tracking-widest uppercase ${item.textColor}`}>
                         {item.year}
                       </span>
-                      <span className="text-[10px] text-gray-500 font-medium italic">
+                      <span className="text-[10px] text-text-secondary font-medium italic">
                         {item.location}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-400 transition-colors">
+                    <h3 className={`text-xl font-bold text-text-primary mb-3 group-hover:${item.textColor} transition-colors`}>
                       {item.title}
                     </h3>
                     
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                    <p className="text-text-secondary text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </div>

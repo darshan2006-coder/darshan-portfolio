@@ -1,26 +1,33 @@
 @import "tailwindcss";
-@import "./animations.css"; /* If you added the animations from earlier */
+@import "./animations.css";
+
+@theme {
+  /* This maps your custom hex codes to Tailwind v4 utility classes */
+  --color-nordic-midnight: #0A192F;
+  --color-nordic-slate: #112240;
+  --color-dark-steel: #1B2A41;
+  
+  --color-arctic-cyan: #64FFDA;
+  --color-bright-cyan: #7DF9FF;
+  
+  --color-text-primary: #E6F1FF;
+  --color-text-secondary: #8892B0;
+}
 
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
 }
 
-/* Body */
+/* Global Body Override */
 body {
-    background: #0B0F19;
-    color: white;
+    background: var(--color-nordic-midnight);
+    color: var(--color-text-primary);
     font-family: "Inter", sans-serif;
-}
-
-/* Images */
-img {
-    display: block;
-    max-width: 100%;
 }
 
 /* Text Selection */
 ::selection {
-    background: #6366F1;
-    color: white;
+    background: rgba(100, 255, 218, 0.2);
+    color: var(--color-arctic-cyan);
 }

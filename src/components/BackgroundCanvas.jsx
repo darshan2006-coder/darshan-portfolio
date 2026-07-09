@@ -46,7 +46,8 @@ const BackgroundCanvas = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(139, 92, 246, ${p.alpha})`; 
+        // Using your exact Arctic Cyan hex #64FFDA converted to RGB format
+        ctx.fillStyle = `rgba(100, 255, 218, ${p.alpha})`; 
         ctx.fill();
       });
 
@@ -61,7 +62,8 @@ const BackgroundCanvas = () => {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(124, 58, 237, ${0.12 * (1 - dist / 130)})`;
+            // Swapped to Arctic Cyan wires utilizing your custom 0.15 opacity boundary
+            ctx.strokeStyle = `rgba(100, 255, 218, ${0.15 * (1 - dist / 130)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -84,9 +86,9 @@ const BackgroundCanvas = () => {
       {/* JavaScript Active Constellation Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 opacity-70" />
 
-      {/* Floating Nebula Light Flares fixed to viewports */}
-      <div className="fixed top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-violet-900/10 blur-[130px] pointer-events-none mix-blend-screen" />
-      <div className="fixed bottom-[15%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-indigo-900/10 blur-[150px] pointer-events-none mix-blend-screen" />
+      {/* Floating Nebula Light Flares re-targeted to your custom Arctic Cyan theme */}
+      <div className="fixed top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#64FFDA]/4 blur-[130px] pointer-events-none mix-blend-screen" />
+      <div className="fixed bottom-[15%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#64FFDA]/4 blur-[150px] pointer-events-none mix-blend-screen" />
     </div>
   );
 };

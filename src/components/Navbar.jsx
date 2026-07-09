@@ -12,7 +12,6 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -26,25 +25,24 @@ function Navbar() {
   ];
 
   return (
+    // Outer Wrapper: Spans full screen width and applies the base horizontal layout padding
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 px-10 lg:px-12 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0B0F19]/80 backdrop-blur-xl shadow-lg"
+          ? "bg-nordic-midnight/80 backdrop-blur-xl shadow-lg border-b border-dark-steel/40"
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto flex justify-between items-center px-8 lg:px-16 h-20">
+      {/* Inner Navigation Container: Re-aligned to perfectly mirror the Hero content constraint */}
+      <nav className="max-w-[1250px] mx-auto flex justify-between items-center h-20 w-full">
 
-        {/* Logo */}
-
-        <h1 className="text-2xl font-bold tracking-wide text-white">
+        {/* Logo - Anchors flawlessly onto the grid wall */}
+        <h1 className="text-2xl font-bold tracking-wide text-text-primary pl-0 ml-0 select-none">
           DARSHAN
         </h1>
 
         {/* Desktop Menu */}
-
         <ul className="hidden md:flex items-center gap-8">
-
           {navItems.map((item) => (
             <li key={item}>
               <Link
@@ -53,43 +51,37 @@ function Navbar() {
                 duration={500}
                 spy={true}
                 offset={-70}
-                activeClass="text-violet-400"
-                className="cursor-pointer text-gray-300 hover:text-violet-400 transition"
+                activeClass="text-arctic-cyan font-semibold"
+                className="cursor-pointer text-text-secondary hover:text-arctic-cyan transition-colors duration-200"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </Link>
             </li>
           ))}
-
         </ul>
 
-        {/* Resume Button */}
-
+        {/* High-Contrast Arctic Cyan Resume Button */}
         <a
           href="/resume.pdf"
-          className="hidden md:inline-flex px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 transition font-semibold"
+          className="hidden md:inline-flex px-5 py-2.5 rounded-xl bg-arctic-cyan hover:bg-bright-cyan text-nordic-midnight transition duration-300 font-bold text-sm shadow-md shadow-arctic-cyan/5"
         >
           Download Resume
         </a>
 
         {/* Mobile Menu Button */}
-
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-white text-3xl"
+          className="md:hidden text-text-primary text-3xl focus:outline-none"
         >
-          {menuOpen ? <HiX /> : <HiMenu />}
+          {menuOpen ? <HiX /> : <HiMenu className="text-arctic-cyan" />}
         </button>
 
       </nav>
 
-      {/* Mobile Menu */}
-
+      {/* Mobile Menu Dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-[#111827] border-t border-violet-500/20">
-
-          <div className="flex flex-col px-8 py-6 gap-6">
-
+        <div className="md:hidden bg-nordic-slate border-t border-arctic-cyan/15 shadow-xl mx-[-2.5rem]">
+          <div className="flex flex-col px-10 py-6 gap-6">
             {navItems.map((item) => (
               <Link
                 key={item}
@@ -97,18 +89,19 @@ function Navbar() {
                 smooth={true}
                 duration={500}
                 onClick={() => setMenuOpen(false)}
-                className="cursor-pointer text-gray-300 hover:text-violet-400"
+                className="cursor-pointer text-text-secondary hover:text-arctic-cyan transition-colors duration-200"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </Link>
             ))}
 
-           <a href="/resume.pdf" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-500 transition font-semibold text-sm text-white">
-                    Download Resume
-           </a>
-
+            <a 
+              href="/resume.pdf" 
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-arctic-cyan hover:bg-bright-cyan text-nordic-midnight transition duration-300 font-bold text-sm"
+            >
+              Download Resume
+            </a>
           </div>
-
         </div>
       )}
     </header>

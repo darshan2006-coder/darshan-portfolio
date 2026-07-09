@@ -55,49 +55,52 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-[#0B0F19] text-white py-28 px-10 lg:px-12 min-h-screen">
+    <section id="projects" className="bg-nordic-midnight text-text-primary py-28 px-10 lg:px-12 min-h-screen">
       <div className="max-w-[1250px] mx-auto w-full">
         
-        {/* Header - Aligned perfectly */}
+        {/* Header */}
         <div className="mb-16 text-left">
-          <h2 className="text-6xl font-bold mt-4">PROJECTS</h2>
-          <p className="text-gray-400 mt-6 text-sm max-w-2xl leading-relaxed">
+          <p className="text-arctic-cyan uppercase tracking-[0.3em] text-sm font-semibold">
+            PORTFOLIO
+          </p>
+          <h2 className="text-6xl font-bold mt-4 tracking-wide text-text-primary">PROJECTS</h2>
+          <p className="text-text-secondary mt-6 text-sm max-w-2xl leading-relaxed">
             Transforming complex challenges into elegant, AI-driven applications.<br/>
             Explore my latest full-stack builds and intelligent systems.
           </p>
         </div>
 
-        {/* --- PROJECT GRID (Strictly 2 Columns Max) --- */}
+        {/* --- PROJECT GRID (2 Columns Max) --- */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="bg-[#111827] border border-violet-500/20 rounded-2xl p-8 flex flex-col h-full hover:-translate-y-2 hover:border-violet-500/60 hover:shadow-[0_15px_40px_-10px_rgba(124,58,237,0.25)] transition-all duration-300 ease-out relative overflow-hidden"
+              className="bg-nordic-slate border border-dark-steel rounded-2xl p-8 flex flex-col h-full hover:-translate-y-1 hover:border-arctic-cyan/20 hover:shadow-[0_20px_40px_-15px_rgba(100,255,218,0.07)] transition-all duration-300 ease-out relative overflow-hidden"
             >
               {/* Status Badge */}
-              <span className="absolute top-6 right-6 px-3 py-1 text-xs font-semibold bg-[#0B0F19] border border-violet-500/30 rounded-full text-violet-300">
+              <span className="absolute top-6 right-6 px-3 py-1 text-xs font-mono border border-arctic-cyan/20 rounded-full text-arctic-cyan bg-nordic-midnight">
                 {project.status}
               </span>
 
               <div className="mb-5">
-                <p className="text-violet-400 text-xs font-bold tracking-widest uppercase mb-2">
+                <p className="text-arctic-cyan/80 text-xs font-mono tracking-widest uppercase mb-2">
                   {project.subtitle}
                 </p>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-text-primary">
                   {project.title}
                 </h3>
               </div>
               
-              <p className="text-gray-400 mb-6 flex-grow leading-relaxed text-sm">
+              <p className="text-text-secondary mb-6 flex-grow leading-relaxed text-sm">
                 {project.description}
               </p>
 
-              {/* Attractive, Glowing Tech Stack Pills */}
+              {/* Technologies: Dark Background with Crisp White Wording inside */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.tech.map((t, index) => (
                   <span 
                     key={index} 
-                    className="px-3 py-1.5 rounded-md bg-violet-900/30 border border-violet-500/40 text-xs font-semibold text-violet-200 shadow-[0_0_10px_rgba(139,92,246,0.1)]"
+                    className="px-3 py-1.5 rounded-lg bg-[#111c2e] text-white text-xs font-mono tracking-wide"
                   >
                     {t}
                   </span>
@@ -105,37 +108,37 @@ const Projects = () => {
               </div>
 
               {/* Card Action Buttons */}
-              <div className="pt-6 border-t border-gray-800/60 mt-auto flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  {/* GitHub Button */}
+              <div className="pt-6 border-t border-dark-steel/40 mt-auto flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2.5">
+                  {/* GitHub Button - Pure White Border, No Background, White Text */}
                   <a 
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md border border-gray-600 hover:border-gray-400 text-white transition-all text-xs font-bold tracking-widest uppercase"
+                    className="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-white bg-transparent text-white hover:bg-white/5 transition-all text-xs font-bold tracking-widest uppercase"
                   >
                     <span className="font-mono text-sm font-black">{'</>'}</span>
                     GITHUB
                   </a>
 
-                  {/* Demo Button */}
+                  {/* Demo Button - Pure White Border, No Background, White Text */}
                   {project.demo && (
                     <a 
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md border border-gray-600 hover:border-gray-400 text-white transition-all text-xs font-bold tracking-widest uppercase"
+                      className="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-white bg-transparent text-white hover:bg-white/5 transition-all text-xs font-bold tracking-widest uppercase"
                     >
-                      <FaExternalLinkAlt size={11} />
+                      <FaExternalLinkAlt size={10} />
                       LIVE DEMO
                     </a>
                   )}
                 </div>
 
-                {/* Project Details Button */}
+                {/* Project Details Button - Neon Mint Accent matching your upload */}
                 <button 
                   onClick={() => setActiveProject(project)}
-                  className="inline-flex items-center justify-center px-4 py-2.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all text-xs font-bold tracking-widest uppercase whitespace-nowrap"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-[#53FCDB] hover:bg-[#3be0bf] text-nordic-midnight font-bold shadow-[0_0_25px_rgba(83,252,219,0.3)] transition-all duration-300 text-xs tracking-widest uppercase whitespace-nowrap cursor-pointer hover:-translate-y-0.5"
                 >
                   PROJECT DETAILS
                 </button>
@@ -146,33 +149,33 @@ const Projects = () => {
 
         {/* --- FULL SCREEN OVERLAY VIEW --- */}
         {activeProject && (
-          <div className="fixed inset-0 z-50 bg-[#0B0F19] overflow-y-auto py-20 px-10 lg:px-12 animate-in fade-in duration-300">
+          <div className="fixed inset-0 z-50 bg-nordic-midnight overflow-y-auto py-20 px-10 lg:px-12 animate-in fade-in duration-300">
             <div className="max-w-[1250px] mx-auto w-full">
               
               {/* Back to Portfolio Button */}
               <button 
                 onClick={() => setActiveProject(null)}
-                className="group inline-flex items-center gap-3 px-5 py-2.5 rounded-xl bg-gray-800/50 hover:bg-gray-800 border border-gray-700 text-gray-300 hover:text-white font-semibold mb-12 transition-all duration-300"
+                className="group inline-flex items-center gap-3 px-5 py-2.5 rounded-xl bg-nordic-slate hover:bg-dark-steel border border-dark-steel text-text-secondary hover:text-text-primary font-semibold mb-12 transition-all duration-300 cursor-pointer"
               >
                 <FaArrowLeft className="group-hover:-translate-x-1 transition-transform duration-300" />
                 Back to Portfolio
               </button>
 
               {/* Isolated Space Container */}
-              <div className="bg-[#111827] border border-violet-500/20 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-600/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+              <div className="bg-nordic-slate border border-dark-steel rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-arctic-cyan/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
                 <div className="grid lg:grid-cols-5 gap-12 lg:gap-20">
                   
                   {/* Left Side Info */}
                   <div className="lg:col-span-3">
-                    <p className="text-emerald-400 tracking-[0.3em] text-sm font-bold uppercase mb-3">
+                    <p className="text-arctic-cyan tracking-[0.3em] text-sm font-mono uppercase mb-3">
                       {activeProject.subtitle}
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-text-primary mb-6">
                       {activeProject.title}
                     </h2>
-                    <p className="text-gray-300 text-lg leading-relaxed mb-10">
+                    <p className="text-text-secondary text-lg leading-relaxed mb-10">
                       {activeProject.description}
                     </p>
 
@@ -181,7 +184,7 @@ const Projects = () => {
                         href={activeProject.github}
                         target="_blank"
                         rel="noreferrer" 
-                        className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl border-2 border-gray-600 hover:border-white text-gray-300 hover:text-white transition-all font-semibold"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl border-2 border-white bg-transparent text-white hover:bg-white/5 transition-all font-semibold"
                       >
                         <FaGithub size={20} />
                         Source Code
@@ -191,7 +194,7 @@ const Projects = () => {
                           href={activeProject.demo}
                           target="_blank"
                           rel="noreferrer"  
-                          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.25)] transition-all font-semibold text-white"
+                          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#53FCDB] hover:bg-[#3be0bf] text-nordic-midnight font-bold shadow-[0_0_20px_rgba(83,252,219,0.2)] transition-all"
                         >
                           <FaExternalLinkAlt size={16} />
                           View Live Application
@@ -203,12 +206,12 @@ const Projects = () => {
                   {/* Right Side Info */}
                   <div className="lg:col-span-2 space-y-10">
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-5 border-b border-gray-800 pb-3">Technologies</h4>
+                      <h4 className="text-xl font-bold text-text-primary mb-5 border-b border-dark-steel pb-3">Technologies</h4>
                       <div className="flex flex-wrap gap-2">
                         {activeProject.tech.map((t, index) => (
                           <span 
                             key={index} 
-                            className="px-4 py-2 rounded-lg bg-violet-900/20 border border-violet-500/30 text-sm font-semibold text-violet-300 shadow-inner"
+                            className="px-4 py-2 rounded-lg bg-[#111c2e] text-sm font-mono text-white"
                           >
                             {t}
                           </span>
@@ -217,12 +220,12 @@ const Projects = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-5 border-b border-gray-800 pb-3">Key Architecture</h4>
+                      <h4 className="text-xl font-bold text-text-primary mb-5 border-b border-dark-steel pb-3">Key Architecture</h4>
                       <ul className="space-y-4">
                         {activeProject.breakdown.map((item, idx) => (
                           <li key={idx} className="flex gap-4">
-                            <span className="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 shrink-0 shadow-[0_0_8px_#10b981]"></span>
-                            <span className="text-gray-300 leading-relaxed text-sm md:text-base">
+                            <span className="mt-1.5 w-2 h-2 rounded-full bg-arctic-cyan shrink-0 shadow-[0_0_8px_rgba(100,255,218,0.6)]"></span>
+                            <span className="text-text-secondary leading-relaxed text-sm md:text-base">
                               {item}
                             </span>
                           </li>

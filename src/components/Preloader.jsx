@@ -54,7 +54,7 @@ const Preloader = ({ onComplete }) => {
         vy: Math.sin(angle) * speed,
         radius: Math.random() * 1.8 + 0.5,
         alpha: Math.random() * 0.6 + 0.3,
-        color: Math.random() > 0.4 ? '139, 92, 246' : '168, 85, 247'
+        color: Math.random() > 0.4 ? '83, 252, 219' : '100, 255, 218' // Mapped exactly to your Arctic Cyan signature
       });
     }
 
@@ -86,7 +86,7 @@ const Preloader = ({ onComplete }) => {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(124, 58, 237, ${0.12 * (1 - dist / 95)})`;
+            ctx.strokeStyle = `rgba(83, 252, 219, ${0.12 * (1 - dist / 95)})`;
             ctx.lineWidth = 0.4;
             ctx.stroke();
           }
@@ -109,14 +109,15 @@ const Preloader = ({ onComplete }) => {
       initial={{ y: 0 }}
       exit={{ y: "-100%" }} 
       transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }} 
-      className="fixed inset-0 bg-[#0B0F19] z-[9999] flex flex-col items-center justify-center overflow-hidden select-none"
+      className="fixed inset-0 bg-nordic-midnight z-[9999] flex flex-col items-center justify-center overflow-hidden select-none"
     >
       <canvas 
         ref={canvasRef} 
         className="absolute top-0 left-0 w-full h-full pointer-events-none z-0" 
       />
 
-      <div className="absolute w-[450px] h-[450px] rounded-full bg-violet-600/10 blur-[110px] pointer-events-none z-0" />
+      {/* Cybernetic Core Radial Light Source */}
+      <div className="absolute w-[450px] h-[450px] rounded-full bg-arctic-cyan/5 blur-[110px] pointer-events-none z-0" />
 
       <div className="relative flex flex-col items-center justify-center p-4 z-10 text-center">
         
@@ -126,16 +127,16 @@ const Preloader = ({ onComplete }) => {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="mb-5"
         >
-          <h1 className="text-5xl md:text-7xl font-black tracking-[0.25em] bg-gradient-to-r from-white via-violet-200 to-violet-400 bg-clip-text text-transparent font-sans ml-[0.25em]">
+          <h1 className="text-5xl md:text-7xl font-black tracking-[0.25em] bg-gradient-to-r from-white via-white to-arctic-cyan bg-clip-text text-transparent font-sans ml-[0.25em]">
             DARSHAN R
           </h1>
         </motion.div>
 
         {/* Clean, high-contrast white text layout block */}
         <div className="h-8 flex items-center justify-center">
-          <p className="text-white/95 font-mono text-sm md:text-base font-semibold tracking-[0.15em] uppercase whitespace-nowrap">
+          <p className="text-text-primary font-mono text-sm md:text-base font-semibold tracking-[0.15em] uppercase whitespace-nowrap">
             {typedText}
-            <span className="animate-pulse ml-0.5 text-white">|</span>
+            <span className="animate-pulse ml-0.5 text-arctic-cyan">|</span>
           </p>
         </div>
 
