@@ -34,7 +34,6 @@ function Hero() {
         setText(nextText);
         setTypingSpeed(40); // Fast deletion speed
 
-        // Fixed: Change phrase instantly when string is completely cleared
         if (nextText === "") {
           setIsDeleting(false);
           setLoopIndex((prev) => prev + 1);
@@ -68,11 +67,9 @@ function Hero() {
               DARSHAN
             </h1>
 
-            {/* Title styled with a sleek White-to-Cyan premium developer gradient */}
-            <h2 className="mt-6 text-2xl md:text-3xl lg:text-4xl font-semibold min-h-[4rem] lg:min-h-[3rem] text-text-primary">
-              <span className="bg-gradient-to-r from-text-primary to-arctic-cyan bg-clip-text text-transparent">
-                {text}
-              </span>
+            {/* Premium Style Header: Uses text-arctic-cyan directly to look incredible during high-speed typing runs */}
+            <h2 className="mt-6 text-2xl md:text-3xl lg:text-4xl font-semibold min-h-[4rem] lg:min-h-[3rem] text-arctic-cyan">
+              <span>{text}</span>
               <span className="inline-block w-[3px] h-[1.1em] bg-arctic-cyan ml-1 animate-pulse align-middle">|</span>
             </h2>
 
