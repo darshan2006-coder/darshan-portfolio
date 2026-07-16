@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { HiMenu, HiX } from "react-icons/hi";
+import resumePDF from '../assets/resume/resume.pdf';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -62,7 +63,8 @@ function Navbar() {
 
         {/* High-Contrast Arctic Cyan Resume Button */}
         <a
-          href="/resume.pdf"
+          href={resumePDF}
+          download="Darshan_Resume.pdf"
           className="hidden md:inline-flex px-5 py-2.5 rounded-xl bg-arctic-cyan hover:bg-bright-cyan text-nordic-midnight transition duration-300 font-bold text-sm shadow-md shadow-arctic-cyan/5"
         >
           Download Resume
