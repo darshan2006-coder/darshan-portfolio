@@ -108,14 +108,16 @@ const Projects = () => {
               </div>
 
               {/* Card Action Buttons */}
-              <div className="pt-6 border-t border-dark-steel/40 mt-auto flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2.5">
+              <div className="pt-6 border-t border-dark-steel/40 mt-auto flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-4">
+                
+                {/* Left Side Buttons Container */}
+                <div className="flex flex-wrap items-center gap-2.5">
                   {/* GitHub Button - Pure White Border, No Background, White Text */}
                   <a 
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-white bg-transparent text-white hover:bg-white/5 transition-all text-xs font-bold tracking-widest uppercase"
+                    className="inline-flex flex-1 sm:flex-none items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-white bg-transparent text-white hover:bg-white/5 transition-all text-xs font-bold tracking-widest uppercase"
                   >
                     <span className="font-mono text-sm font-black">{'</>'}</span>
                     GITHUB
@@ -127,7 +129,7 @@ const Projects = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-white bg-transparent text-white hover:bg-white/5 transition-all text-xs font-bold tracking-widest uppercase"
+                      className="inline-flex flex-1 sm:flex-none items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-white bg-transparent text-white hover:bg-white/5 transition-all text-xs font-bold tracking-widest uppercase"
                     >
                       <FaExternalLinkAlt size={10} />
                       LIVE DEMO
@@ -138,7 +140,7 @@ const Projects = () => {
                 {/* Project Details Button - Neon Mint Accent matching your upload */}
                 <button 
                   onClick={() => setActiveProject(project)}
-                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-[#53FCDB] hover:bg-[#3be0bf] text-nordic-midnight font-bold shadow-[0_0_25px_rgba(83,252,219,0.3)] transition-all duration-300 text-xs tracking-widest uppercase whitespace-nowrap cursor-pointer hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center w-full xl:w-auto px-5 py-2.5 rounded-xl bg-[#53FCDB] hover:bg-[#3be0bf] text-nordic-midnight font-bold shadow-[0_0_25px_rgba(83,252,219,0.3)] transition-all duration-300 text-xs tracking-widest uppercase whitespace-nowrap cursor-pointer hover:-translate-y-0.5"
                 >
                   PROJECT DETAILS
                 </button>
