@@ -10,7 +10,7 @@ const Projects = () => {
       title: "AI Healthcare Assistant",
       subtitle: "Intelligent Patient Triage System",
       description: "A production-ready, full-stack AI healthcare platform that performs multi-lingual symptom triage and intelligent risk evaluation. Built with strict safety guardrails, it dynamically triggers emergency hospital recommendations for severe cases, generates downloadable EHRs, and securely persists user consultation history via MongoDB Atlas.",
-      tech: ["Node.js", "Express.js", "JavaScript", "HTML5", "CSS3"],
+      tech: ["Node.js", "Express.js", "JavaScript", "HTML5", "CSS3","MongoDB Atlas", "Mongoose ODM", "Render Cloud Hosting","RESTful APIs"],
       github: "https://github.com/darshan2006-coder/AI-HealthCare-Assistant",
       demo: "https://ai-healthcare-assistant-kkwh.onrender.com",
       status: "Live",
